@@ -1,3 +1,4 @@
+import numpy as np
 from collections import deque
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -216,9 +217,9 @@ class TrajectoryMonitor:
 if __name__ == "__main__":
     ti = TrajectoryMonitor()  # 设置圆的初始半径为2
 
-    intersection_points = []
+
     # 读取 Excel 文件
-    file_path = r'user.xlsx'
+    file_path = r'C:\Users\LHD\Desktop\协作域约束小论文\实验数据\数据处理\YANSHIGUIJI\REN\NLink_LinkTrack_Node_Frame1_20250328_154918.xlsx'
     ren = pd.read_excel(file_path, header=None)
 
     # 提取第一列和第二列数据
@@ -226,23 +227,7 @@ if __name__ == "__main__":
     y = ren.iloc[:, 1].values
     # 初始化图形
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.set_xlabel("X (m)")
-    ax.set_ylabel("Y (m)")
-    ax.set_title("Real-time Trajectory and Circle Intersections")
-    ax.set_xlim(-6, 6)
-    ax.set_ylim(-6, 6)
-    ax.set_aspect('equal', adjustable='box')
 
-    import pandas as pd
-    import numpy as np
-
-    # 假设 intersection_points 存储所有交点的坐标
-    intersection_points = []
-
-    import pandas as pd
-    import numpy as np
-
-    # 假设 intersection_points 存储所有交点的坐标
     intersection_points = []
 
     # 设置误差的标准差
@@ -265,7 +250,7 @@ if __name__ == "__main__":
         ax.set_ylim(-2, 10)
         ax.set_xlabel("X (m)")
         ax.set_ylabel("Y (m)")
-        ax.set_title("Real-time Trajectory and Circle Intersections")
+        ax.set_title("CRCM")
         ax.set_aspect('equal', adjustable='box')
 
         # 绘制当前和之前的轨迹
@@ -293,9 +278,5 @@ if __name__ == "__main__":
         if status_code == 3:
             ax.add_patch(plt.Circle(ti.monitoring_point, ti.circle_radius, color='orange', fill=False, linestyle='--'))
 
-        # # 绘制停止点
-        # if ti.stop_position is not None:
-        #     ax.plot(ti.stop_position[0], ti.stop_position[1], 'go')  # 绘制停止点（绿色）
-
-        plt.pause(0.1)
+        plt.pause(0.01)
     plt.show()
