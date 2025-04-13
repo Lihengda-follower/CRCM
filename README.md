@@ -20,7 +20,7 @@ Only the code for the key module CRCM is available at this stage of the study, a
 
 Here is a demo of how the project works:
 
-![Demo GIF](CRCM/CRCM.gif)
+![Demo GIF](CRCM.gif)
 Provide a more detailed description of the project, its background, goals, and key features. You can also include any relevant context here.
 
 ## Installation
