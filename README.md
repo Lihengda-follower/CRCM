@@ -18,6 +18,7 @@ The mechanization of fruit harvesting is essential for sustainable development i
 Here is a demo of how the project works:
 
 ![Demo GIF](CRCM.gif)
+
 This gif demonstrates the core functionality of CRCM：FTP generation module、Precise stopping module with collaborative region shrinkage、and Monitoring and re-following module.
 
 ## Installation
