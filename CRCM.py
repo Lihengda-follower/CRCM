@@ -27,7 +27,6 @@ class TrajectoryMonitor:
         for j in range(max(0, current_index - self.max_history_points), current_index - 1):
             p1 = historical_trajectory[j % self.max_history_points, :]
             p2 = historical_trajectory[(j + 1) % self.max_history_points, :]
-            # print(center)
             d = p2 - p1  # The direction vector of the line segment
             f = p1 - center  # Vector from the start of the line segment to the centre of the circle
 
@@ -61,7 +60,6 @@ class TrajectoryMonitor:
 
             if all_intersections:
                 avg_intersection = np.mean(np.vstack(all_intersections), axis=0)
-                print(avg_intersection)
                 return  avg_intersection  # 两个交点
 
     def Sliding_window_monitor_position(self, current_position):
@@ -232,7 +230,6 @@ if __name__ == "__main__":
         ax.set_title("CRCM")
         ax.set_aspect('equal', adjustable='box')
         ax.plot(x[:i + 1], y[:i + 1], label="Trajectory", color='blue')
-        # print(ti.trajectory)
         x_data = [point[0] for point in ti.trajectory[:i + 1]]  
         y_data = [point[1] for point in ti.trajectory[:i + 1]]  
         ax.plot(x_data, y_data, label="Trajectory", color='green')
@@ -244,7 +241,6 @@ if __name__ == "__main__":
             ax.add_patch(plt.Circle(ti.stop_position, ti.circle_radius, color='orange', fill=False, linestyle='--'))
         if status_code == 0 or status_code == 1:
             ax.add_patch(plt.Circle(circle_center, ti.circle_radius, color='orange', fill=False, linestyle='--'))
-            # print('ssdsdsdsdsd')
         if status_code == 3:
             ax.add_patch(plt.Circle(ti.monitoring_point, ti.circle_radius, color='orange', fill=False, linestyle='--'))
         plt.pause(0.01)
