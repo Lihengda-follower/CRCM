@@ -21,6 +21,10 @@ Here is a demo of how the project works:
 
 This gif demonstrates the core functionality of CRCM：FTP generation module、Precise stopping module with collaborative region shrinkage、and Monitoring and re-following module.
 
+CRCM VS DFCM:
+
+![CRCM GIF](Our CRCM.gif)
+
 ## Installation
 
 ### Prerequisites
