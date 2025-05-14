@@ -23,7 +23,7 @@ This gif demonstrates the core functionality of CRCM：FTP generation module、P
 
 CRCM VS DFCM:
 
-![CRCM GIF](Our CRCM.gif)
+![CRCM GIF](Our_CRCM.gif)
 
 ## Installation
 
